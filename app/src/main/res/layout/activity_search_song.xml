@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".Activity.SearchSong">
+
+    <androidx.appcompat.widget.Toolbar
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:id="@+id/toolbarSearchSong"
+        android:layout_width="35dp"
+        android:layout_height="35dp">
+    </androidx.appcompat.widget.Toolbar>
+    <androidx.appcompat.widget.SearchView
+        android:layout_toEndOf="@id/toolbarSearchSong"
+        android:layout_margin="5dp"
+        android:id="@+id/edtSearchSong"
+        android:background="@drawable/search_bg"
+        app:iconifiedByDefault="false"
+        app:queryHint="Search"
+        android:layout_width="match_parent"
+        android:layout_height="35dp">
+    </androidx.appcompat.widget.SearchView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="5dp"
+        android:id="@+id/recyclerViewListSearchSong"
+        android:layout_below="@id/toolbarSearchSong"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </androidx.recyclerview.widget.RecyclerView>
+    <TextView
+        android:id="@+id/textviewNoFoundSong"
+        android:visibility="gone"
+        android:text="No found song!"
+        android:textSize="25sp"
+        android:textColor="#C9E2DF"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

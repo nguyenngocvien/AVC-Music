@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".Activity.MainActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        app:title="AVC Music"
+        app:titleTextColor="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </androidx.appcompat.widget.Toolbar>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/recyclerViewListSong"
+        android:layout_below="@id/toolbar"
+        android:layout_above="@id/layoutPlayingSong"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <RelativeLayout
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="2dp"
+        android:orientation="horizontal"
+        android:id="@+id/layoutPlayingSong"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/playing_song_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            app:civ_border_color="#FAFAFA"
+            app:civ_border_width="1dp"
+            android:layout_marginStart="10dp"
+            android:layout_gravity="center"
+            android:layout_margin="3dp"
+            android:id="@+id/imageViewSongPlaying"
+            android:src="@drawable/music_disc"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <LinearLayout
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/imageViewSongPlaying"
+            android:layout_marginStart="10dp"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/textviewSongTitle"
+                android:textSize="14sp"
+                android:textColor="#FAFAFA"
+                android:layout_marginStart="5dp"
+                android:maxWidth="250dp"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/textviewSongSinger"
+                android:textSize="12sp"
+                android:textColor="#B9B6B6"
+                android:layout_marginStart="5dp"
+                android:maxWidth="250dp"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <ImageButton
+            android:layout_toStartOf="@id/imageButtonNext"
+            android:layout_centerVertical="true"
+            android:id="@+id/imageButtonPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="25dp"
+            android:background="@null"
+            android:src="@drawable/ic_play_arrow_black_24dp" />
+
+        <ImageButton
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/imageButtonNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:background="@null"
+            android:src="@drawable/ic_skip_next_black_24dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
